@@ -1,29 +1,92 @@
-s<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
 
-
+<title>Hello!</title>
 
 <meta charset="utf-8">
 <link rel="stylesheet" href="style.css">
 
 
-
-
 </head>
 
-<body> 
+<body>
+<h3>Instagram Sneek Peak :O</h3>
+
+
+<img src="Foto.png" alt="Instagram Sneek peek" width="200" height="200">
+<img src="Foto2.png"  height="200" width="200" style="cursor:pointer" onclick="window.open('https://www.instagram.com/b_r_c_k._y', '_blank', 'noopener')"> 
 
 
 
 
-<h3>Such dir einen Knopf aus!</h3>
+<section class="color-center">
+        <div class="color-preview" id="colorPreview" aria-hidden="true"></div>
+
+       
+        <div class="mode-toggle">
+            <label class="switch" title="Schwarz/Weiß umschalten">
+                <input type="checkbox" id="modeSwitch" aria-label="Schwarz/Weiß Modus">
+                <span class="slider"></span>
+            </label>
+            <span class="mode-label"><span id="modeLabel">Farbe</span></span>
+        </div>
+
+        <input id="hueRange" type="range" min="0" max="360" value="0" aria-label="Farbregler" style="--h:0">
+    </section>
+
+<section class="btnposition">
 
 
-<a href="https://youtube.com" class="btn" target="_blank">YouTube</a>
-<a href="https://wikipedia.org" class="btn" target="_blank">Wikipedia</a>
-<a href="https://github.com" class="btn" target="_blank">Dieses Repository</a>
+<div class="btn-container anchored">
+    <a href="https://www.instagram.com/b_r_c_k._y" class="btn" target="_blank">Mein Instagram</a>
+    <a href="" class="reload-btn" target="_blank" onclick="location.reload();">↻</a>
+    <a href="https://github.com/enschubert2-bit" class="btn" target="_blank">Mein GitHub</a>
+
+    </div>
+</section>
+
+ 
+ 
+<script>
+    (function(){
+        const range = document.getElementById('hueRange');
+        const preview = document.getElementById('colorPreview');
+        const modeSwitch = document.getElementById('modeSwitch');
+        const modeLabel = document.getElementById('modeLabel');
+        const container = document.querySelector('.color-center');
+
+        function update() {
+            const h = range.value;
+            const isBW = !!modeSwitch?.checked;
+
+            if (isBW) {
+                
+                const l = Math.round((h / 360) * 100);
+                const bw = `hsl(0, 0%, ${l}%)`;
+                range.style.setProperty('--thumb', bw);
+                if (preview) preview.style.background = bw;
+                container?.classList.add('bw');
+                if (modeLabel) modeLabel.textContent = 'S/W';
+            } else {
+                
+                range.style.setProperty('--h', h);
+                const color = `hsl(${h},100%,50%)`;
+                range.style.setProperty('--thumb', color);
+                if (preview) preview.style.background = color;
+                container?.classList.remove('bw');
+                if (modeLabel) modeLabel.textContent = 'Farbe';
+            }
+        }
+
+        range.addEventListener('input', update);
+        modeSwitch?.addEventListener('change', update);
+        // initial
+        update();
+    })();
+</script>
+
 
 
 
