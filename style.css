@@ -1,0 +1,35 @@
+/* style.css - Verwende diese Klasse in index.html z.B. <a href="#" class="btn">Link</a> */
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    background-color: #1e90ff; /* blau */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: background-color 200ms ease, transform 120ms ease, box-shadow 200ms ease;
+    box-shadow: 0 4px 10px rgba(30, 144, 255, 0.18);
+}
+
+/* Wird beim Hover rötlicher */
+.btn:hover,
+.btn:focus {
+    background-color: #ff5c5c; /* rötlicher */
+    box-shadow: 0 8px 18px rgba(255, 92, 92, 0.18);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Für Tastaturfokus sichtbar machen */
+.btn:focus-visible {
+    box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.15);
+}
+
+
