@@ -1,4 +1,4 @@
-/* style.css - Verwende diese Klasse in index.html z.B. <a href="#" class="btn">Link</a> */
+
 
 .btn {
     display: inline-block;
@@ -14,7 +14,7 @@
     box-shadow: 0 4px 10px rgba(30, 144, 255, 0.18);
 }
 
-/* Wird beim Hover rötlicher */
+
 .btn:hover,
 .btn:focus {
     background-color: #ff5c5c; /* rötlicher */
@@ -27,7 +27,7 @@
     transform: translateY(0);
 }
 
-/* Für Tastaturfokus sichtbar machen */
+
 .btn:focus-visible {
     box-shadow: 0 0 0 4px rgba(30, 144, 255, 0.15);
 }
@@ -78,7 +78,7 @@ body {
 
 }
 
-/* Toggle switch next to the slider */
+
 .mode-toggle { display:flex; align-items:center; gap:10px; }
 .mode-toggle .mode-label { font-weight:600; color:#222; }
 .switch { position:relative; display:inline-block; width:46px; height:26px; }
@@ -155,7 +155,6 @@ input[type="range"]::-moz-range-thumb {
     cursor: pointer;
 }
 
-/* In Schwarz/Weiß-Modus: Track als Schwarz->Weiß Verlauf */
 .color-center.bw input[type="range"] {
     background: linear-gradient(90deg, #000, #fff);
 }
@@ -163,4 +162,5 @@ input[type="range"]::-moz-range-thumb {
 @media (max-width:480px) {
     input[type="range"] { width: 90%; }
 }
+
 
